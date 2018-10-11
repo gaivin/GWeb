@@ -14,7 +14,8 @@ class Language(models.Model):
     name = models.CharField(max_length=100)
     release_date = models.DateField(null=True, blank=True)
     language_type = models.CharField(choices=LANGUAGE_CHOICES, max_length=100)
-    description = models.TextField(max_length=1000)
+    home_page = models.CharField(max_length=200, null=True, blank=True)
+    description = models.TextField(max_length=1000, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
