@@ -1,17 +1,12 @@
-<!-- myfirstvis/templates/pyecharts.html -->
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
 
-<head>
-    <meta charset="utf-8">
-    <title>{{ title }}</title>
+{% block link_script%}
     {% for jsfile_name in script_list %}
     <script src="{{ host }}/{{ jsfile_name }}.js"></script>
     {% endfor %}
-</head>
+{% endblock %}
 
-<body>
-{{ myechart|safe }}
-</body>
-
-</html>
+{% block content %}
+    {{ myechart|safe }}
+{% endblock %}
