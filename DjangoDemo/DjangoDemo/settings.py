@@ -24,7 +24,7 @@ SECRET_KEY = 'o8f#=!7uwz-c=@1gb#g+7l_(9tjx1@1qfg%ezvt_azydo3@hfp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gaivin.pythonanywhere.com']
+ALLOWED_HOSTS = ['gaivin.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 
@@ -75,6 +75,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'dd_db.sqlite3'),
+    }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gaivin$gweb',
+        'USER': 'gaivin',
+        'PASSWORD': 'changeme',
+        'HOST': 'gaivin.mysql.pythonanywhere-services.com',
     }
 }
 
